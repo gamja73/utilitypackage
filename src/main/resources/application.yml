@@ -1,0 +1,23 @@
+server.port: ${server.port}
+
+spring:
+    servlet.multipart:
+        maxFileSize: 100MB
+        maxRequestSize: 300MB
+    config.import: optional:classpath:env.yml
+    datasource:
+        url: jdbc:mysql://${db-config.host}:${db-config.port}/${db-config.database}?characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Seoul
+        username: ${db-config.username}
+        password: ${db-config.password}
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQL8Dialect
+        hibernate:
+            ddl-auto: none
+            generate-ddl: false
+            show-mysql: true
+            properties.format_sql: true
+            naming:
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
