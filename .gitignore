@@ -2,6 +2,7 @@
 frontend/node_modules/
 frontend/dist/
 frontend/.vite/
+frontend/package-lock.json
 
 # Vite env
 frontend/.env.local
@@ -16,6 +17,8 @@ backend/.classpath
 backend/.project
 backend/.settings/
 backend/bin/
+backend/src/main/resources/static/index.html
+backend/src/main/resources/static/assats/*
 
 # Gradle
 .gradle/

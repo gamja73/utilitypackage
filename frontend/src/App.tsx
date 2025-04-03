@@ -1,8 +1,11 @@
 // src/App.jsx
-import { motion } from 'framer-motion';
 import './App';
 
 function App() {
+    return (
+        <div className="app-container">
+        </div>
+    );
 }
 
 export default App;
