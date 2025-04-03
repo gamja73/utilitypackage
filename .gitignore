@@ -1,37 +1,40 @@
-HELP.md
-.gradle
-build/
+# === Node.js / Vite (frontend) ===
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Vite env
+frontend/.env.local
+frontend/.env.*
+
+# Logs
+frontend/npm-debug.log*
+
+# === Java / Spring Boot (backend) ===
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/bin/
+
+# Gradle
+.gradle/
+**/build/
+**/out/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IDEA / Eclipse
 *.iml
 *.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+*.iws
+.idea/
+*.log
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# OS files
+.DS_Store
+Thumbs.db
 
-### VS Code ###
-.vscode/
+# === Environment / Secrets ===
+*.env
+.env.*
+*.local
