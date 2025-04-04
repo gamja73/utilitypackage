@@ -1,11 +1,15 @@
-// src/App.jsx
-import './App';
+import { Routes, Route } from 'react-router-dom'
+import MainPage from './pages/mainPage'
+import CustomScrollbar from "./components/customScrollbar";
 
 function App() {
     return (
-        <div className="app-container">
-        </div>
-    );
+        <CustomScrollbar className="h-screen">
+            <Routes>
+                <Route path='/' element={<MainPage />} />
+            </Routes>
+        </CustomScrollbar>
+    )
 }
 
-export default App;
+export default App
