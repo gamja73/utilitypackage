@@ -8,12 +8,12 @@ interface Card {
 }
 
 const cards: Card[] = [
-    { name: "JSON 포매터", image: "/json.png", path: "/json-formatter" },
-    { name: "텍스트 수 세기", image: "/text.png", path: "/text-counter" },
-    { name: "이미지 업스케일링", image: "/image.png", path: "/image-upscaler" },
-    { name: "영상 업스케일링", image: "/video.png", path: "/video-upscaler" },
-    { name: "PDF 합치기", image: "/pdf-merge.png", path: "/pdf-merge" },
-    { name: "PDF 나누기", image: "/pdf-split.png", path: "/pdf-split" },
+    { name: "JSON 포매터", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png", path: "" },
+    { name: "텍스트 수 세기", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png", path: "" },
+    { name: "이미지 업스케일링", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png", path: "" },
+    { name: "영상 업스케일링", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png", path: "" },
+    { name: "PDF 합치기", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png", path: "" },
+    { name: "PDF 나누기", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png", path: "" },
 ];
 
 const MainPage = () => {
@@ -39,13 +39,13 @@ const MainPage = () => {
 
     return (
         <div className="w-full min-h-screen bg-zinc-900 text-white flex flex-col items-center px-4 pt-20 overflow-x-hidden">
-            <h1 className="text-4xl font-bold mb-6 text-center">유틸리티 패키지</h1>
+            <h1 className="text-4xl font-bold mb-6 text-center">Utility package</h1>
             <input
                 type="text"
                 placeholder="유틸리티 검색..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="mb-8 px-4 py-2 rounded-md bg-zinc-800 text-white w-full max-w-md border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="mb-8 px-4 py-2 rounded-md bg-zinc-800 tex    t-white w-full max-w-md border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
             />
             <div
                 ref={containerRef}
@@ -69,7 +69,7 @@ const MainPage = () => {
                             }}
                             className="w-[180px] h-[240px] bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 shadow-xl overflow-hidden cursor-pointer transition-transform duration-300 relative"
                         >
-                            <img src={card.image} alt={card.name} className="w-full h-2/3 object-cover" />
+                            <img src={card.image} alt={card.name} className="w-5/6 h-2/3 object-contain m-auto" />
                             <div className="h-1/3 flex items-center justify-center text-white font-semibold text-center px-2">
                                 {card.name}
                             </div>
