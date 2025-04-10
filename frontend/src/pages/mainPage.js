@@ -6,15 +6,57 @@ import lightLogo from "@/assets/image/utility_package_logo_W.png";
 const cards = [
     {
         name: "이미지 업스케일링",
-        description: "저해상도 이미지를 선명하게 변환합니다.AI 기반 업스케일링을 지원합니다.",
+        description: "저해상도 이미지를 AI 기술을 활용하여 고해상도로 선명하게 변환합니다.",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
         path: "/image-upscale",
     },
     {
-        name: "PDF 합치기",
-        description: "여러 PDF 파일을 하나로 합칩니다.",
+        name: "이미지 변환 및 리사이즈",
+        description: "이미지의 확장자를 변경하거나 크기를 조절합니다.",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
-        path: "/merge-pdf",
+        path: "/image-convert-resize",
+    },
+    {
+        name: "동영상 업스케일링",
+        description: "저화질 영상을 AI 기술을 활용하여 고해상도로 향상시킵니다.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+        path: "/video-upscale",
+    },
+    {
+        name: "동영상 변환 및 리사이즈",
+        description: "영상의 포맷을 변환하거나 해상도를 조절합니다.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+        path: "/video-convert-resize",
+    },
+    {
+        name: "영상 → 이미지 변환",
+        description: "동영상을 프레임 단위 이미지로 추출합니다.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+        path: "/video-to-image",
+    },
+    {
+        name: "이미지 → 영상 변환",
+        description: "여러 이미지를 이어붙여 동영상을 생성합니다.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+        path: "/image-to-video",
+    },
+    {
+        name: "JSON 포매터",
+        description: "지저분한 JSON을 보기 좋게 정렬하고 포맷팅합니다.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+        path: "/json-formatter",
+    },
+    {
+        name: "텍스트 유틸리티",
+        description: "대소문자 전환, 공백 제거, 텍스트 일괄 변경, 글자 수 세기 등 텍스트 관련 기능을 제공합니다.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+        path: "/text-utils",
+    },
+    {
+        name: "텍스트 인코딩/디코딩",
+        description: "URL, Base64 등 다양한 텍스트 인코딩과 디코딩을 지원합니다.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+        path: "/text-encode-decode",
     },
 ];
 const MainPage = ({ isDarkMode }) => {
