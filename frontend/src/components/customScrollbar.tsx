@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "./customScrollbar.css";
+import "./CustomScrollbar.css";
 
 interface CustomScrollbarProps {
     children: ReactNode;
