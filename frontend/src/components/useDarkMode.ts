@@ -13,6 +13,9 @@ export default function useDarkMode() {
         } else if (savedTheme === "light") {
             document.documentElement.classList.remove("dark");
             setIsDarkMode(false);
+        } else {
+            document.documentElement.classList.add("dark");
+            setIsDarkMode(true);
         }
     }, []);
 
