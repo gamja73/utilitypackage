@@ -18,7 +18,7 @@ backend/.project
 backend/.settings/
 backend/bin/
 backend/src/main/resources/static/index.html
-backend/src/main/resources/static/assats/*
+backend/src/main/resources/static/assets/*
 
 # Gradle
 .gradle/
