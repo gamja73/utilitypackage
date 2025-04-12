@@ -6,6 +6,7 @@ import CommonDetailPage from "@/pages/CommonDetailPage";
 import TextUtilsPage from "@/pages/TextUtilsPage";
 import TextEncodeDecodePage from "@/pages/TextEncodeDecodePage";
 import RandomKeyGeneratorPage from "@/pages/RandomKeyGeneratorPage";
+import NotFound from "@/pages/error/NotFound";
 
 interface Card {
     name: string;
@@ -118,6 +119,7 @@ function App() {
                 <Route path="/text-utils" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 유틸리티"} innerElement={<TextUtilsPage/>}/>}/>
                 <Route path="/text-encode-decode" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 인코딩/디코딩"} innerElement={<TextEncodeDecodePage/>}/>}/>
                 <Route path="/random-key-generator" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"랜덤 키 생성기"} innerElement={<RandomKeyGeneratorPage/>}/>}/>
+                <Route path="/*" element={<NotFound isDarkMode={isDarkMode}/>} />
             </Routes>
         </CustomScrollbar>
     );
