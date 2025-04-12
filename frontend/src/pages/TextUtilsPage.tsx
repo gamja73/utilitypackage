@@ -18,6 +18,7 @@ const TextUtilsPage = () => {
             case "uppercase": text = text.toUpperCase(); break;
             case "lowercase": text = text.toLowerCase(); break;
             case "removeSpaces": text = text.replace(/\s+/g, ""); break;
+            case "removeLineBreak": text = text.replace(/\n+/g, ""); break;
             case "replaceText":
                 const targetText = prompt("변경될 텍스트를 입력하세요:");
                 const afterText = prompt("변경할 텍스트를 입력하세요:");
@@ -45,6 +46,7 @@ const TextUtilsPage = () => {
                 <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={() => handleButtonClick("uppercase")}>대문자로 변환</button>
                 <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={() => handleButtonClick("lowercase")}>소문자로 변환</button>
                 <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={() => handleButtonClick("removeSpaces")}>공백 제거</button>
+                <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={() => handleButtonClick("removeLineBreak")}>줄바꿈 제거</button>
                 <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={() => handleButtonClick("replaceText")}>텍스트 변경</button>
             </div>
             <div className="mt-4">
