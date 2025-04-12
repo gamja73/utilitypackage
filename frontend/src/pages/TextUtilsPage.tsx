@@ -6,7 +6,7 @@ interface PageProps {
     title: string;
 }
 
-const CommonPage = ({ isDarkMode, toggleDarkMode, title }: PageProps) => {
+const TextUtilsPage = ({ isDarkMode, toggleDarkMode, title }: PageProps) => {
     return (
         <DetailLayout
             title={title}
@@ -18,4 +18,4 @@ const CommonPage = ({ isDarkMode, toggleDarkMode, title }: PageProps) => {
     );
 };
 
-export default CommonPage;
+export default TextUtilsPage;
