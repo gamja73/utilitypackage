@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import MainPage from '@/pages/mainPage';
 import useDarkMode from '@/components/useDarkMode';
 import CustomScrollbar from "@/components/CustomScrollbar";
-import CommonPage from "@/pages/CommonPage";
+import CommonDetailPage from "@/pages/CommonDetailPage";
 import TextUtilsPage from "@/pages/TextUtilsPage";
 import TextEncodeDecodePage from "@/pages/TextEncodeDecodePage";
 import RandomKeyGeneratorPage from "@/pages/RandomKeyGeneratorPage";
@@ -101,6 +101,6 @@ function App() {
         //     path: "/excel-editor",
         // },
     ];
-    return (_jsx(CustomScrollbar, { className: "h-screen", children: _jsxs(Routes, { children: [_jsx(Route, { path: '/', element: _jsx(MainPage, { isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode, cards: cardData }) }), _jsx(Route, { path: "/image-upscale", element: _jsx(CommonPage, { isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode, title: "이미지 업스케일링" }) }), _jsx(Route, { path: "/text-utils", element: _jsx(TextUtilsPage, { isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode, title: "텍스트 유틸리티" }) }), _jsx(Route, { path: "/text-encode-decode", element: _jsx(TextEncodeDecodePage, { isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode, title: "텍스트 인코딩/디코딩" }) }), _jsx(Route, { path: "/random-key-generator", element: _jsx(RandomKeyGeneratorPage, { isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode, title: "랜덤 키 생성기" }) })] }) }));
+    return (_jsx(CustomScrollbar, { className: "h-screen", children: _jsxs(Routes, { children: [_jsx(Route, { path: '/', element: _jsx(MainPage, { isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode, cards: cardData }) }), _jsx(Route, { path: "/image-upscale", element: _jsx(CommonDetailPage, { isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode, title: "이미지 업스케일링" }) }), _jsx(Route, { path: "/text-utils", element: _jsx(TextUtilsPage, { isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode, title: "텍스트 유틸리티" }) }), _jsx(Route, { path: "/text-encode-decode", element: _jsx(TextEncodeDecodePage, { isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode, title: "텍스트 인코딩/디코딩" }) }), _jsx(Route, { path: "/random-key-generator", element: _jsx(RandomKeyGeneratorPage, { isDarkMode: isDarkMode, toggleDarkMode: toggleDarkMode, title: "랜덤 키 생성기" }) })] }) }));
 }
 export default App;

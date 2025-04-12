@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import MainPage from '@/pages/mainPage';
 import useDarkMode from '@/components/useDarkMode';
 import CustomScrollbar from "@/components/CustomScrollbar";
-import CommonPage from "@/pages/CommonPage";
+import CommonDetailPage from "@/pages/CommonDetailPage";
 import TextUtilsPage from "@/pages/TextUtilsPage";
 import TextEncodeDecodePage from "@/pages/TextEncodeDecodePage";
 import RandomKeyGeneratorPage from "@/pages/RandomKeyGeneratorPage";
@@ -114,10 +114,10 @@ function App() {
         <CustomScrollbar className="h-screen">
             <Routes>
                 <Route path='/' element={<MainPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} cards={cardData}/>}/>
-                <Route path="/image-upscale" element={<CommonPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"이미지 업스케일링"}/>}/>
-                <Route path="/text-utils" element={<TextUtilsPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 유틸리티"}/>}/>
-                <Route path="/text-encode-decode" element={<TextEncodeDecodePage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 인코딩/디코딩"}/>}/>
-                <Route path="/random-key-generator" element={<RandomKeyGeneratorPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"랜덤 키 생성기"}/>}/>
+                <Route path="/image-upscale" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"이미지 업스케일링"} innerElement={<TextUtilsPage/>}/>}/>
+                <Route path="/text-utils" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 유틸리티"} innerElement={<TextUtilsPage/>}/>}/>
+                <Route path="/text-encode-decode" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 인코딩/디코딩"} innerElement={<TextEncodeDecodePage/>}/>}/>
+                <Route path="/random-key-generator" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"랜덤 키 생성기"} innerElement={<RandomKeyGeneratorPage/>}/>}/>
             </Routes>
         </CustomScrollbar>
     );

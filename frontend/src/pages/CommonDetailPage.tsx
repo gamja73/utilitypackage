@@ -1,21 +1,23 @@
 import DetailLayout from "@/components/DetailLayout";
+import {JSX} from "react";
 
 interface PageProps {
     isDarkMode: boolean;
     toggleDarkMode: () => void;
     title: string;
+    innerElement: JSX.Element;
 }
 
-const CommonPage = ({ isDarkMode, toggleDarkMode, title }: PageProps) => {
+const CommonDetailPage = ({ isDarkMode, toggleDarkMode, title, innerElement }: PageProps) => {
     return (
         <DetailLayout
             title={title}
             isDarkMode={isDarkMode}
             toggleDarkMode={toggleDarkMode}
         >
-            <div></div>
+            {innerElement}
         </DetailLayout>
     );
 };
 
-export default CommonPage;
+export default CommonDetailPage;

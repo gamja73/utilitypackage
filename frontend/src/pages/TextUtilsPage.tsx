@@ -1,20 +1,6 @@
-import DetailLayout from "@/components/DetailLayout";
-
-interface PageProps {
-    isDarkMode: boolean;
-    toggleDarkMode: () => void;
-    title: string;
-}
-
-const TextUtilsPage = ({ isDarkMode, toggleDarkMode, title }: PageProps) => {
+const TextUtilsPage = () => {
     return (
-        <DetailLayout
-            title={title}
-            isDarkMode={isDarkMode}
-            toggleDarkMode={toggleDarkMode}
-        >
-            <div></div>
-        </DetailLayout>
+        <div></div>
     );
 };
 
