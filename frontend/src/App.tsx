@@ -117,7 +117,7 @@ function App() {
                 <Route path='/' element={<MainPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} cards={cardData}/>}/>
                 <Route path="/image-upscale" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"이미지 업스케일링"} innerElement={<TextUtilsPage/>}/>}/>
                 <Route path="/text-utils" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 유틸리티"} innerElement={<TextUtilsPage/>}/>}/>
-                <Route path="/text-encode-decode" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 인코딩/디코딩"} innerElement={<TextEncodeDecodePage/>}/>}/>
+                <Route path="/text-encode-decode" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 인코딩/디코딩"} innerElement={<TextEncodeDecodePage isDarkMode={isDarkMode} />}/>}/>
                 <Route path="/random-key-generator" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"랜덤 키 생성기"} innerElement={<RandomKeyGeneratorPage/>}/>}/>
                 <Route path="/*" element={<NotFound isDarkMode={isDarkMode}/>} />
             </Routes>
