@@ -7,6 +7,8 @@ import TextUtilsPage from "@/pages/TextUtilsPage";
 import TextEncodeDecodePage from "@/pages/TextEncodeDecodePage";
 import RandomKeyGeneratorPage from "@/pages/RandomKeyGeneratorPage";
 import NotFound from "@/pages/error/NotFound";
+import QrGeneratorPage from "@/pages/QrGeneratorPage";
+import ColorConverterPage from "@/pages/ColorConverter";
 
 interface Card {
     name: string;
@@ -85,24 +87,24 @@ function App() {
         //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
         //     path: "/text-diff",
         // },
-        // {
-        //     name: "QR 코드 생성기",
-        //     description: "텍스트나 URL을 입력하면 QR 코드를 실시간으로 생성합니다.",
-        //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
-        //     path: "/qr-generator",
-        // },
+        {
+            name: "QR 코드 생성기",
+            description: "텍스트나 URL을 입력하면 QR 코드를 실시간으로 생성합니다.",
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+            path: "/qr-generator",
+        },
         // {
         //     name: "타임스탬프 변환기",
         //     description: "유닉스 타임스탬프와 날짜/시간을 상호 변환합니다.",
         //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
         //     path: "/timestamp-converter",
         // },
-        // {
-        //     name: "컬러 코드 변환기",
-        //     description: "HEX, RGB, HSL 컬러 코드를 서로 변환하고 색상 미리보기를 제공합니다.",
-        //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
-        //     path: "/color-converter",
-        // },
+        {
+            name: "컬러 코드 변환기",
+            description: "HEX, RGB, HSL 컬러 코드를 서로 변환하고 색상 미리보기를 제공합니다.",
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+            path: "/color-converter",
+        },
         // {
         //     name: "엑셀 편집기",
         //     description: "엑셀(.xlsx) 파일을 업로드하여 내용을 열람하고 편집할 수 있습니다.",
@@ -119,6 +121,9 @@ function App() {
                 <Route path="/text-utils" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 유틸리티"} innerElement={<TextUtilsPage/>}/>}/>
                 <Route path="/text-encode-decode" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 인코딩/디코딩"} innerElement={<TextEncodeDecodePage isDarkMode={isDarkMode} />}/>}/>
                 <Route path="/random-key-generator" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"랜덤 키 생성기"} innerElement={<RandomKeyGeneratorPage/>}/>}/>
+                <Route path="/qr-generator" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"QR 코드 생성기"} innerElement={<QrGeneratorPage/>}/>}/>
+                <Route path="/color-converter" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"컬러 코드 변환기"} innerElement={<ColorConverterPage/>}/>}/>
+
                 <Route path="/*" element={<NotFound isDarkMode={isDarkMode}/>} />
             </Routes>
         </CustomScrollbar>
