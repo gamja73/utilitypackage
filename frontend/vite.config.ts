@@ -9,7 +9,12 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src'),
+            buffer: 'buffer',
+            stream: 'stream-browserify',
         },
+    },
+    optimizeDeps: {
+        include: ['buffer', 'stream-browserify'],
     },
     build: {
         outDir: 'dist',
