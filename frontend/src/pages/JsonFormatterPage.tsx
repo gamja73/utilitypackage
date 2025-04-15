@@ -17,7 +17,7 @@ const JsonFormatterPage = () => {
     }, [input]);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-[calc(100vh-8rem)] max-w-screen-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-[calc(100vh-8rem)] max-w-screen-xl mx-auto items-center">
             <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-semibold">입력</span>
