@@ -20,6 +20,10 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // 문자열 인코딩
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'com.ibm.icu:icu4j:74.2'
 }
 
 task installReact(type: Exec) {

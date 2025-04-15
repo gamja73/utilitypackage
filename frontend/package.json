@@ -17,13 +17,13 @@
         "@types/react-dom": "^19.0.4",
         "@vitejs/plugin-react": "^4.3.4",
         "autoprefixer": "^10.4.21",
+        "axios": "^1.8.4",
         "crypto-js": "^4.2.0",
         "eslint": "^9.21.0",
         "eslint-plugin-react-hooks": "^5.1.0",
         "eslint-plugin-react-refresh": "^0.4.19",
         "framer-motion": "^12.6.3",
         "globals": "^15.15.0",
-        "js-base64": "^3.7.7",
         "lucide-react": "^0.487.0",
         "postcss": "^8.5.3",
         "qrcode.react": "^4.2.0",
@@ -38,8 +38,5 @@
     },
     "proxy": "http://127.0.0.1:9080/",
     "devDependencies": {
-        "buffer": "^6.0.3",
-        "iconv-lite": "^0.6.3",
-        "stream-browserify": "^3.0.0"
     }
 }

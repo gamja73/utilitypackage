@@ -1,4 +1,9 @@
-server.port: ${server.port}
+server:
+    port: ${server.port}
+    servlet.encoding:
+        enabled: true
+        force: true
+        charset: UTF-8
 
 spring:
     servlet.multipart:
