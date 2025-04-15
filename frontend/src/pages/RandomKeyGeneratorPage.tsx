@@ -33,8 +33,21 @@ const RandomKeyGeneratorPage = () => {
     const [keys, setKeys] = useState<string[]>([]);
 
     const handleGenerate = () => {
+        if (!useUpper && !useLower && !useNumbers && !useSymbols) {
+            alert('최소 하나의 옵션을 선택해야 합니다.');
+            return;
+        }
+        if (length < 1 || length > 256) {
+            alert('글자 수는 1에서 256 사이여야 합니다.');
+            return;
+        }
+        if (count < 1 || count > 50) {
+            alert('생성 갯수는 1에서 50 사이여야 합니다.');
+            return;
+        }
+
         const results = Array.from({ length: count }, () =>
-            generateRandomKey(16, useUpper, useLower, useNumbers, useSymbols)
+            generateRandomKey(length, useUpper, useLower, useNumbers, useSymbols)
         );
         setKeys(results);
     };
@@ -74,8 +87,8 @@ const RandomKeyGeneratorPage = () => {
                     <input
                         id="length"
                         type="number"
-                        min={4}
-                        max={128}
+                        min={1}
+                        max={256}
                         value={length}
                         onChange={(e) => setLength(Number(e.target.value))}
                         className="w-24 px-2 py-1 border rounded-md dark:bg-zinc-800 dark:border-zinc-600 dark:text-white"
@@ -92,6 +105,7 @@ const RandomKeyGeneratorPage = () => {
                 {keys.map((key, i) => (
                     <div
                         key={i}
+                        style={ {overflowWrap: 'anywhere'} }
                         className="px-4 py-2 rounded-md bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white border border-zinc-300 dark:border-zinc-600 font-mono text-sm"
                     >
                         {key}

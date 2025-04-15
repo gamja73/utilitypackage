@@ -94,12 +94,6 @@ function App() {
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
             path: "/qr-generator",
         },
-        // {
-        //     name: "타임스탬프 변환기",
-        //     description: "유닉스 타임스탬프와 날짜/시간을 상호 변환합니다.",
-        //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
-        //     path: "/timestamp-converter",
-        // },
         {
             name: "컬러 코드 변환기",
             description: "HEX, RGB, HSL 컬러 코드를 서로 변환하고 색상 미리보기를 제공합니다.",
