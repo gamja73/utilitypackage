@@ -9,6 +9,7 @@ import RandomKeyGeneratorPage from "@/pages/RandomKeyGeneratorPage";
 import NotFound from "@/pages/error/NotFound";
 import QrGeneratorPage from "@/pages/QrGeneratorPage";
 import ColorConverterPage from "@/pages/ColorConverter";
+import JsonFormatterPage from "@/pages/JsonFormatterPage";
 
 interface Card {
     name: string;
@@ -57,12 +58,12 @@ function App() {
         //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
         //     path: "/image-to-video",
         // },
-        // {
-        //     name: "JSON 포매터",
-        //     description: "지저분한 JSON을 보기 좋게 정렬하고 포맷팅합니다.",
-        //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
-        //     path: "/json-formatter",
-        // },
+        {
+            name: "JSON 포매터",
+            description: "지저분한 JSON을 보기 좋게 정렬하고 포맷팅합니다.",
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+            path: "/json-formatter",
+        },
         {
             name: "텍스트 유틸리티",
             description: "대소문자 전환, 공백 제거, 텍스트 일괄 변경, 글자 수 세기 등 텍스트 관련 기능을 제공합니다.",
@@ -123,7 +124,7 @@ function App() {
                 <Route path="/random-key-generator" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"랜덤 키 생성기"} innerElement={<RandomKeyGeneratorPage/>}/>}/>
                 <Route path="/qr-generator" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"QR 코드 생성기"} innerElement={<QrGeneratorPage/>}/>}/>
                 <Route path="/color-converter" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"컬러 코드 변환기"} innerElement={<ColorConverterPage/>}/>}/>
-
+                <Route path="/json-formatter" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"JSON 포매터"} innerElement={<JsonFormatterPage/>}/>}/>
                 <Route path="/*" element={<NotFound isDarkMode={isDarkMode}/>} />
             </Routes>
         </CustomScrollbar>
