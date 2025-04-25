@@ -4,9 +4,10 @@ frontend/dist/
 frontend/.vite/
 frontend/package-lock.json
 
-# Vite env
+# env
 frontend/.env.local
 frontend/.env.*
+backend/src/main/resources/env.yml
 
 # Logs
 frontend/npm-debug.log*

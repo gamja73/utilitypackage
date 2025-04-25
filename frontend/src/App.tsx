@@ -10,6 +10,8 @@ import NotFound from "@/pages/error/NotFound";
 import QrGeneratorPage from "@/pages/QrGeneratorPage";
 import ColorConverterPage from "@/pages/ColorConverter";
 import JsonFormatterPage from "@/pages/JsonFormatterPage";
+import ImageUpscalePage from "@/pages/ImageUpscalePage";
+import ResizeAndConvertPage from "@/pages/ImageResizeAndConvertPage";
 
 interface Card {
     name: string;
@@ -22,18 +24,18 @@ function App() {
     const { isDarkMode, toggleDarkMode } = useDarkMode();
 
     const cardData : Card[] = [
-        // {
-        //     name: "이미지 업스케일링",
-        //     description: "저해상도 이미지를 AI 업스케일링 기술을 활용하여 고해상도로 선명하게 변환합니다.",
-        //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
-        //     path: "/image-upscale",
-        // },
-        // {
-        //     name: "이미지 변환 및 리사이즈",
-        //     description: "이미지의 확장자를 변경하거나 크기를 조절합니다.",
-        //     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
-        //     path: "/image-convert-resize",
-        // },
+        {
+            name: "이미지 업스케일링",
+            description: "저해상도 이미지를 AI 업스케일링 기술을 활용하여 고해상도로 선명하게 변환합니다.",
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+            path: "/image-upscale",
+        },
+        {
+            name: "이미지 변환 및 리사이즈",
+            description: "이미지의 확장자를 변경하거나 크기를 조절합니다.",
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+            path: "/image-convert-resize",
+        },
         // {
         //     name: "동영상 업스케일링",
         //     description: "저화질 영상을 AI 업스케일링 기술을 활용하여 고해상도로 향상시킵니다.",
@@ -112,13 +114,14 @@ function App() {
         <CustomScrollbar className="h-screen">
             <Routes>
                 <Route path='/' element={<MainPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} cards={cardData}/>}/>
-                <Route path="/image-upscale" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"이미지 업스케일링"} innerElement={<TextUtilsPage/>}/>}/>
                 <Route path="/text-utils" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 유틸리티"} innerElement={<TextUtilsPage/>}/>}/>
                 <Route path="/text-encode-decode" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"텍스트 인코딩/디코딩"} innerElement={<TextEncodeDecodePage isDarkMode={isDarkMode} />}/>}/>
                 <Route path="/random-key-generator" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"랜덤 키 생성기"} innerElement={<RandomKeyGeneratorPage/>}/>}/>
                 <Route path="/qr-generator" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"QR 코드 생성기"} innerElement={<QrGeneratorPage/>}/>}/>
                 <Route path="/color-converter" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"컬러 코드 변환기"} innerElement={<ColorConverterPage/>}/>}/>
                 <Route path="/json-formatter" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"JSON 포매터"} innerElement={<JsonFormatterPage/>}/>}/>
+                <Route path="/image-upscale" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"이미지 업스케일링"} innerElement={<ImageUpscalePage/>}/>}/>
+                <Route path="/image-convert-resize" element={<CommonDetailPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} title={"이미지 변환 및 리사이즈"} innerElement={<ResizeAndConvertPage/>}/>}/>
                 <Route path="/*" element={<NotFound isDarkMode={isDarkMode}/>} />
             </Routes>
         </CustomScrollbar>

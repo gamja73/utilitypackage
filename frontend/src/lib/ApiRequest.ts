@@ -13,12 +13,19 @@ interface ApiRequestOptions<T = any> {
 
 const apiRequest = async <T = any>({ method, url, data, params, onSuccess, onError, }: ApiRequestOptions<T>): Promise<T | undefined> => {
     try {
-        const response = await api.request<T>({ method, url, data, params });
+        const isFormData = data instanceof FormData;
+
+        const response = await api.request<T>({ method, url, params, data,
+            headers: isFormData
+                ? { "Content-Type": "multipart/form-data" }
+                : { "Content-Type": "application/json" },
+        });
+
         onSuccess?.(response.data);
         return response.data;
     } catch (error) {
         const err = error as AxiosError;
-        console.error('[API ERROR]', err.response?.data || err.message);
+        console.error("[API ERROR]", err.response?.data || err.message);
         onError?.(err);
         return undefined;
     }
