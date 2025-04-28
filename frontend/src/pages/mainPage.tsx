@@ -71,7 +71,7 @@ const MainPage = ({ isDarkMode, toggleDarkMode, cards }: MainPageProps) => {
                         >
                             <div className={`${isHovered ? "flex flex-row items-start gap-4" : "flex flex-col items-center"}`}>
                                 <img src={isDarkMode ? card.image_W : card.image_B} alt={card.name} className={`object-contain transition-all duration-300 ${isHovered ? "w-12 h-12" : "w-5/6 h-2/3"}`}/>
-                                <div className={`font-semibold break-keep ${isHovered ? "text-left mt-1" : "text-center mt-4"}`}>{card.name}</div>
+                                <div className={`font-semibold break-keep text-lg ${isHovered ? "text-left mt-1" : "text-center mt-4"}`}>{card.name}</div>
                             </div>
                             {isHovered && (<div className="mt-4 text-sm text-zinc-500 dark:text-zinc-300 whitespace-pre-line text-left break-keep">{card.description}</div>)}
                         </div>

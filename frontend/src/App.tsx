@@ -157,7 +157,7 @@ function App() {
                         />
                     ))
                 }
-                <Route path="/*" element={<NotFound isDarkMode={isDarkMode}/>} />
+                <Route path="/*" element={<NotFound/>} />
             </Routes>
         </CustomScrollbar>
     );
