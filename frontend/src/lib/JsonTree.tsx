@@ -4,14 +4,14 @@ import { FaTrash, FaPlus, FaChevronDown, FaChevronRight } from "react-icons/fa6"
 type JsonValue = string | number | boolean | null | JsonValue[] | { [k: string]: JsonValue };
 
 const typeColor = (v: any) => {
-    if (v === null) return "text-[#fd971f]";
-    if (typeof v === "string") return "text-[#e6db74]";
-    if (typeof v === "number") return "text-[#ae81ff]";
-    if (typeof v === "boolean") return "text-[#66d9ef]";
-    if (typeof v === "undefined") return "text-[#75715e]";
-    if (typeof v === "object" && Array.isArray(v)) return "text-[#a6e22e]";
-    if (typeof v === "object") return "text-[#f92672]";
-    return "text-[#ffffff]";
+    if (v === null) return "text-orange-700 dark:text-orange-400";
+    if (typeof v === "string") return "text-yellow-800 dark:text-yellow-300";
+    if (typeof v === "number") return "text-purple-700 dark:text-purple-300";
+    if (typeof v === "boolean") return "text-cyan-800 dark:text-cyan-300";
+    if (typeof v === "undefined") return "text-zinc-600 dark:text-zinc-400";
+    if (typeof v === "object" && Array.isArray(v)) return "text-lime-800 dark:text-lime-300";
+    if (typeof v === "object") return "text-pink-700 dark:text-pink-300";
+    return "text-black dark:text-white";
 };
 const typeLabel = (v: any) => {
     if (v === null) return "NULL";
@@ -210,7 +210,7 @@ export const JsonTree: React.FC<{
                                 <div className="flex flex-row items-start py-0.5">
                   <span
                       onDoubleClick={() => startEdit(k, value[k], "key")}
-                      className="text-[#f8f8f2] font-bold cursor-pointer font-mono mr-2 min-w-[80px] text-right"
+                      className="text-zinc-800 dark:text-zinc-100 font-bold cursor-pointer font-mono mr-2 min-w-[80px] text-right"
                   >
                     {editKey === k && editType === "key" ? (
                         <input

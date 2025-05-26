@@ -31,7 +31,7 @@ const JsonFormatterPage = () => {
     const handleCopyRight = () => navigator.clipboard.writeText(JSON.stringify(error ? prevValidJson.current : json, null, 2));
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-[calc(100vh-8rem)] max-w-screen-xl mx-auto items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full max-w-screen-xl mx-auto items-center">
             <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-semibold">입력</span>
@@ -52,7 +52,7 @@ const JsonFormatterPage = () => {
             </div>
             <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold">트리 에디터</span>
+                    <span className="text-sm font-semibold">결과</span>
                     <button
                         onClick={handleCopyRight}
                         className="text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded hover:bg-zinc-200 dark:hover:bg-zinc-700 transition"
