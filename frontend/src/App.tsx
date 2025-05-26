@@ -1,20 +1,20 @@
+import {JSX} from "react";
 import { Routes, Route } from 'react-router-dom';
+
 import MainPage from '@/pages/mainPage';
-import useDarkMode from '@/components/useDarkMode';
-import CustomScrollbar from "@/components/CustomScrollbar";
-import CommonDetailPage from "@/pages/CommonDetailPage";
-import TextUtilsPage from "@/pages/TextUtilsPage";
-import TextEncodeDecodePage from "@/pages/TextEncodeDecodePage";
-import RandomKeyGeneratorPage from "@/pages/RandomKeyGeneratorPage";
 import NotFound from "@/pages/error/NotFound";
+import TextUtilsPage from "@/pages/TextUtilsPage";
+import useDarkMode from '@/components/useDarkMode';
 import QrGeneratorPage from "@/pages/QrGeneratorPage";
+import ImageUpscalePage from "@/pages/ImageUpscalePage";
+import CommonDetailPage from "@/pages/CommonDetailPage";
 import ColorConverterPage from "@/pages/ColorConverter";
 import JsonFormatterPage from "@/pages/JsonFormatterPage";
-import ImageUpscalePage from "@/pages/ImageUpscalePage";
-import ResizeAndConvertPage from "@/pages/ImageResizeAndConvertPage";
-import commonDetailPage from "@/pages/CommonDetailPage";
-import {JSX} from "react";
+import CustomScrollbar from "@/components/CustomScrollbar";
+import TextEncodeDecodePage from "@/pages/TextEncodeDecodePage";
+import RandomKeyGeneratorPage from "@/pages/RandomKeyGeneratorPage";
 import ImageResizeAndConvertPage from "@/pages/ImageResizeAndConvertPage";
+import DomainInformationPage from "@/pages/DomainInformation";
 
 interface Card {
     name: string;
@@ -133,6 +133,14 @@ function App() {
             path: "/color-converter",
             page: <ColorConverterPage />,
         },
+        {
+            name: "도메인 정보 조회",
+            description: "도메인을 입력하면 해당 도메인의 정보를 whois.kr 에서 조회합니다.",
+            image_B: "Null",
+            image_W: "Null",
+            path: "/domain-information",
+            page: <DomainInformationPage />
+        }
     ]
 
     return (
@@ -141,10 +149,7 @@ function App() {
                 <Route path='/' element={<MainPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} cards={cardData}/>}/>
                 {
                     cardData.map((card, index) => (
-                        <Route
-                            key={index}
-                            path={card.path}
-                            element={
+                        <Route key={index} path={card.path} element={
                                 <CommonDetailPage
                                     isDarkMode={isDarkMode}
                                     toggleDarkMode={toggleDarkMode}
