@@ -17,7 +17,7 @@ public class GlobalApiExceptionHandler
     @ExceptionHandler({NoResourceFoundException.class, NoHandlerFoundException.class})
     public ModelAndView handleNotFoundException()
     {
-        return new ModelAndView("redirect:/admin/404");
+        return new ModelAndView("redirect:/404");
     }
 
     @ExceptionHandler(CustomException.class)

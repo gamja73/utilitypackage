@@ -30,6 +30,9 @@ public class R2Service
     @Value("${R2-config.bucketName}")
     private String bucketName;
 
+    @Value("${R2-config.cdnDomain}")
+    private String cdnDomain;
+
     private static final List<String> SUPPORTED_FORMATS = Arrays.asList("jpg", "jpeg", "png", "webp", "bmp", "tiff", "avif");
 
     // R2에 이미지 업로드
@@ -99,14 +102,14 @@ public class R2Service
             PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, keyName, inputStream, metadata);
             r2Client.putObject(putObjectRequest);
 
-            // 업로드 성공 후 S3 URL 반환
-            return r2Client.getUrl(bucketName, keyName).toString();
+            return cdnDomain + "/" + keyName;
         }
         catch (Exception e)
         {
             throw new RuntimeException("Error uploading file to R2: " + e.getMessage());
         }
     }
+
 
     // 이미지 파일 -> Webp 로 변환
     private byte[] convertToWebp(MultipartFile file) throws IOException

@@ -70,7 +70,7 @@ public class ApiV1Service
             inputFile.delete();
             outputFile.delete();
 
-            return r2Service.uploadImage(convertedImage).replace("https://utility-package.c232a8ee107f5931fedcc96b97b9bb02.r2.cloudflarestorage.com","https://pub-6592e4b90d1541b39d2ddca5820237b3.r2.dev");
+            return r2Service.uploadImage(convertedImage);
         }
         catch (Exception e)
         {
@@ -123,7 +123,7 @@ public class ApiV1Service
                     upscaledImageBytes
             );
 
-            return r2Service.uploadWebpImage(upscaledMultipartFile).replace("https://utility-package.c232a8ee107f5931fedcc96b97b9bb02.r2.cloudflarestorage.com","https://pub-6592e4b90d1541b39d2ddca5820237b3.r2.dev");
+            return r2Service.uploadWebpImage(upscaledMultipartFile);
         }
         catch (Exception e)
         {
@@ -135,10 +135,6 @@ public class ApiV1Service
 
     public String getDomainInfo(String domain)
     {
-        if (domain == null || domain.isEmpty()) {
-
-        }
-
         return queryDomainInfo(domain, "whois.kr");
     }
 

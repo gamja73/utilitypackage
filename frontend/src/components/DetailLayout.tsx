@@ -18,8 +18,8 @@ const DetailLayout = ({ title, icon_B, icon_W, isDarkMode, toggleDarkMode, child
             <header className="relative flex items-center justify-between px-6 py-4 border-b border-zinc-200 dark:border-zinc-700">
                 <img src={isDarkMode ? lightLogo : darkLogo} alt="Logo" className="h-10 w-auto cursor-pointer" onClick={() => window.location.href = "/"}/>
                 <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
-                    <img src={isDarkMode ? icon_W : icon_B} alt="Page Icon" className="h-8 w-8 mr-4 hidden md:block"/>
-                    <h1 className="text-xl font-semibold">{title}</h1>
+                    <img src={isDarkMode ? icon_W : icon_B} alt="Page Icon" className="h-8 w-8 mr-4 hidden md:block"  onError={(e) => (e.currentTarget.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png')}/>
+                    <h1 className="text-xl md:text-xl font-semibold text-center break-words text-balance max-w-lg">{title}</h1>
                 </div>
                 <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
             </header>
