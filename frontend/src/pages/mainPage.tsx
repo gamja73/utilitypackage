@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import DarkModeToggle from "@/components/DarkModeToggle";
-import darkLogo from "@/assets/image/utility_package_logo_B.png";
-import lightLogo from "@/assets/image/utility_package_logo_W.png";
 
 interface Card {
     name: string;
@@ -24,7 +22,6 @@ const MainPage = ({ isDarkMode, toggleDarkMode, cards }: MainPageProps) => {
     const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
     const [search, setSearch] = useState<string>("");
 
-
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
             if (!containerRef.current?.contains(e.target as Node)) {
@@ -44,7 +41,7 @@ const MainPage = ({ isDarkMode, toggleDarkMode, cards }: MainPageProps) => {
             <div className="w-full max-w-screen-xl flex justify-end px-4 sm:px-6 md:px-8 mb-6">
                 <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
             </div>
-            <img src={isDarkMode ? lightLogo : darkLogo} alt="Utility Package" className="w-56 h-auto mt-10 mb-16 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"/>
+            <img src="https://cdn.utilitypackage.it.kr/newIcon/utilityPackageLogo.avif" alt="Utility Package" className={`w-56 h-auto mt-10 mb-16 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] ${isDarkMode ? "invert" : ""}`}/>
             <div className="mb-12 w-full max-w-md px-5 py-3 flex items-center gap-3 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 shadow-inner transition-colors duration-300 focus-within:ring-2 focus-within:ring-teal-500">
                 <span className="text-zinc-500 dark:text-zinc-400 text-lg">🔍</span>
                 <input type="text" placeholder="유틸리티 검색..." value={search} onChange={(e) => setSearch(e.target.value)} className="flex-1 bg-transparent outline-none text-zinc-800 dark:text-white text-base placeholder:text-zinc-400 dark:placeholder:text-zinc-500"/>

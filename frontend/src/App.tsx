@@ -1,13 +1,13 @@
-import React, { Suspense, lazy } from 'react';
+import React, {Suspense, lazy, useMemo} from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import useDarkMode from '@/components/useDarkMode';
 import CustomScrollbar from "@/components/CustomScrollbar";
 import LoadingComponent from "@/components/LoadingComponent";
-import CommonDetailPage from "@/pages/CommonDetailPage";
 
-const MainPage = lazy(() => import("@/pages/MainPage"));
-const NotFound = lazy(() => import("@/pages/error/NotFound"));
+const CommonDetailPage = React.memo(lazy(() => import("@/pages/CommonDetailPage")));
+const MainPage = React.memo(lazy(() => import("@/pages/MainPage")));
+const NotFound = React.memo(lazy(() => import("@/pages/error/NotFound")));
 const TextUtilsPage = lazy(() => import("@/pages/TextUtilsPage"));
 const QrGeneratorPage = lazy(() => import("@/pages/QrGeneratorPage"));
 const ImageUpscalePage = lazy(() => import("@/pages/ImageUpscalePage"));
@@ -20,18 +20,10 @@ const DomainInformationPage = lazy(() => import("@/pages/DomainInformation"));
 const Ipv4ToIpv6Page = lazy(() => import("@/pages/Ipv4ToIpv6Page"));
 const MulticastConverterPage = lazy(() => import("@/pages/MulticastConverterPage"));
 
-interface Card {
-    name: string;
-    description: string;
-    image: string;
-    path: string;
-    page: React.LazyExoticComponent<React.ComponentType<any>>;
-}
-
 function App() {
     const { isDarkMode, toggleDarkMode } = useDarkMode();
 
-    const cardData : Card[] = [
+    const cardData = useMemo(() => [
         {
             name: "이미지 업스케일링",
             description: "저해상도 이미지를 AI 업스케일링 기술을 활용하여 고해상도로 선명하게 변환합니다.",
@@ -109,16 +101,16 @@ function App() {
             path: "/multicast-ip-mac",
             page: MulticastConverterPage,
         }
-    ]
+    ], []);
 
     return (
         <CustomScrollbar className="h-screen">
             <Suspense fallback={<LoadingComponent />}>
                 <Routes>
                     <Route path="/" element={<MainPage cards={cardData} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />}/>
-                    {cardData.map((card, index) => (
+                    {cardData.map((card) => (
                         <Route
-                            key={index}
+                            key={card.path}
                             path={card.path}
                             element={
                                 <Suspense fallback={<LoadingComponent />}>
