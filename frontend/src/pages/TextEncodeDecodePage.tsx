@@ -52,11 +52,7 @@ const options = [
     {label: "SHA3-512", value: "SHA3-512"},
 ];
 
-interface isDarkMode {
-    isDarkMode: boolean;
-}
-
-const TextEncodeDecodePage = ({isDarkMode}: isDarkMode) => {
+const TextEncodeDecodePage = () => {
     const [inputText, setInputText] = React.useState("");
     const [outputText, setOutputText] = React.useState("");
     const [selectedOption, setSelectedOption] = React.useState<{ value: string; label: string } | null>(null);
@@ -118,7 +114,7 @@ const TextEncodeDecodePage = ({isDarkMode}: isDarkMode) => {
                     onChange={(e) => setInputText(e.target.value)}
                 ></textarea>
                 <div className="flex flex-wrap gap-2 mt-4">
-                    <CustomSelect options={options} isDarkMode={isDarkMode} onChange={(option) => {
+                    <CustomSelect options={options} onChange={(option) => {
                         option?.value ? setSelectedOption(option) : setSelectedOption(null);
                     }}/>
                     <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
