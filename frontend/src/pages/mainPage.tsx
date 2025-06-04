@@ -7,8 +7,7 @@ import lightLogo from "@/assets/image/utility_package_logo_W.png";
 interface Card {
     name: string;
     description: string;
-    image_B: string;
-    image_W: string;
+    image: string;
     path: string;
 }
 
@@ -70,7 +69,7 @@ const MainPage = ({ isDarkMode, toggleDarkMode, cards }: MainPageProps) => {
                             className="w-[200px] min-h-[260px] bg-zinc-100 dark:bg-white/10 backdrop-blur-2xl rounded-2xl border border-zinc-200 dark:border-white/20 shadow-md dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)] overflow-hidden cursor-pointer transition-all duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-2xl p-4 flex flex-col"
                         >
                             <div className={`${isHovered ? "flex flex-row items-start gap-4" : "flex flex-col items-center"}`}>
-                                <img src={isDarkMode ? card.image_W : card.image_B} alt={card.name} className={`object-contain transition-all duration-300 ${isHovered ? "w-12 h-12" : "w-5/6 h-2/3"}`} onError={(e) => (e.currentTarget.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png')}/>
+                                <img src={card.image} alt={card.name} className={`object-contain transition-all duration-300 ${isHovered ? "w-12 h-12" : "w-5/6 h-2/3"} ${isDarkMode ? "invert" : ""}`} onError={(e) => (e.currentTarget.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png')}/>
                                 <div className={`font-semibold break-keep text-lg ${isHovered ? "text-left mt-1" : "text-center mt-4"}`}>{card.name}</div>
                             </div>
                             {isHovered && (<div className="mt-4 text-sm text-zinc-500 dark:text-zinc-300 whitespace-pre-line text-left break-keep">{card.description}</div>)}
