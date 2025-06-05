@@ -5,7 +5,7 @@ import {
     ColorFormats,
 } from "@/lib/colorUtils";
 
-const ColorConverter: React.FC = () => {
+const ColorConverterPage: React.FC = () => {
     const paletteRef = useRef<HTMLCanvasElement>(null);
     const hueTrackRef = useRef<HTMLDivElement>(null);
     const alphaTrackRef = useRef<HTMLDivElement>(null);
@@ -187,4 +187,4 @@ const ColorConverter: React.FC = () => {
     );
 };
 
-export default ColorConverter;
+export default ColorConverterPage;

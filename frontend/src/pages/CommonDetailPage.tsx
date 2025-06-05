@@ -1,5 +1,5 @@
 import DetailLayout from "@/components/DetailLayout";
-import {JSX} from "react";
+import { JSX } from "react";
 
 interface PageProps {
     isDarkMode: boolean;

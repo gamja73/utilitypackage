@@ -11,14 +11,15 @@ const NotFound = React.memo(lazy(() => import("@/pages/error/NotFound")));
 const TextUtilsPage = lazy(() => import("@/pages/TextUtilsPage"));
 const QrGeneratorPage = lazy(() => import("@/pages/QrGeneratorPage"));
 const ImageUpscalePage = lazy(() => import("@/pages/ImageUpscalePage"));
-const ColorConverterPage = lazy(() => import("@/pages/ColorConverter"));
+const ColorConverterPage = lazy(() => import("@/pages/ColorConverterPage"));
 const JsonFormatterPage = lazy(() => import("@/pages/JsonFormatterPage"));
 const TextEncodeDecodePage = lazy(() => import("@/pages/TextEncodeDecodePage"));
 const RandomKeyGeneratorPage = lazy(() => import("@/pages/RandomKeyGeneratorPage"));
 const ImageResizeAndConvertPage = lazy(() => import("@/pages/ImageResizeAndConvertPage"));
-const DomainInformationPage = lazy(() => import("@/pages/DomainInformation"));
+const DomainInformationPage = lazy(() => import("@/pages/DomainInformationPage"));
 const Ipv4ToIpv6Page = lazy(() => import("@/pages/Ipv4ToIpv6Page"));
 const MulticastConverterPage = lazy(() => import("@/pages/MulticastConverterPage"));
+const NotionRedirectPage = lazy(() => import("@/pages/NotionRedirectPage"));
 
 function App() {
     const { isDarkMode, toggleDarkMode } = useDarkMode();
@@ -125,6 +126,7 @@ function App() {
                             }
                         />
                     ))}
+                    <Route path="/notion" element={<NotionRedirectPage />} />
                     <Route path="/*" element={<NotFound />} />
                 </Routes>
             </Suspense>
