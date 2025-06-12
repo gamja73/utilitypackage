@@ -2,7 +2,7 @@ FROM gradle:8.7.0-jdk21 AS build
 WORKDIR /app
 
 # node.js 22버전 설치
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -sudo apt-get install -y nodejs
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && apt-get install -y nodejs
 
 # 전체 소스 복사
 COPY . .
