@@ -13,8 +13,10 @@ RUN ./gradlew build -x test
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
+RUN ls
+
 # 빌드 산출물 JAR 복사
-COPY --from=build /app/backend/build/libs/utilitypackage-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/backend/build/libs/app.jar app.jar
 
 EXPOSE 9080
 ENTRYPOINT ["java", "-jar", "app.jar"]

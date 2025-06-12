@@ -33,6 +33,7 @@ dependencies {
 
 jar {
     enabled = false
+    archiveFileName = 'app.jar'
 }
 
 task installReact(type: Exec) {
