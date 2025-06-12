@@ -31,6 +31,10 @@ dependencies {
     implementation 'com.ibm.icu:icu4j:74.2'
 }
 
+jar {
+    enabled = false
+}
+
 task installReact(type: Exec) {
     workingDir reactDir
     inputs.file "$reactDir/package.json"
